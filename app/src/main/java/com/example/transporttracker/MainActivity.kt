@@ -20,7 +20,6 @@ class MainActivity : Activity() {
             getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Toast.makeText(this, "Please enable location services", Toast.LENGTH_SHORT).show()
-            finish()
         }
 
         // Check location permission is granted - if it is, start
@@ -41,7 +40,6 @@ class MainActivity : Activity() {
 
     private fun startTrackerService() {
         startService(Intent(this, TrackerService::class.java))
-        finish()
     }
 
     override fun onRequestPermissionsResult(
