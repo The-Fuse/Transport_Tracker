@@ -12,8 +12,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import android.app.PendingIntent;
-import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -21,12 +19,15 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.Manifest;
-import android.app.Notification
+import android.app.*
 import android.os.Build
 import android.os.IBinder;
 import android.util.Log;
+import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.getSystemService
 
 class TrackerService : Service() {
     override fun onBind(intent: Intent): IBinder? {
@@ -36,9 +37,34 @@ class TrackerService : Service() {
     override fun onCreate() {
         super.onCreate()
         loginToFirebase()
+        buildnotification()
         requestLocationUpdates()
     }
 
+    private fun buildnotification(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            val notificationManager:NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val channelId="com.example.transporttracker"
+            val name=getString(R.string.app_name)
+            val description="Tracking your location Tap to cancel."
+            val importance=NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(channelId,name,importance).apply {
+                setDescription(description)}
+            notificationManager.createNotificationChannel(channel)
+            val builder =NotificationCompat.Builder(this,channelId)
+                .setSmallIcon(R.drawable.ic_tracker)
+                .setContentTitle(getString(R.string.app_name))
+                .setContentText("Tracking your location Tap to cancel!!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            with(NotificationManagerCompat.from(this)){
+                notify(1,builder.build())
+            }
+        } else {
+            TODO("VERSION.SDK_INT < N")
+        }
+
+
+    }
 
     private fun loginToFirebase() {
         // Authenticate with Firebase, and request location updates
