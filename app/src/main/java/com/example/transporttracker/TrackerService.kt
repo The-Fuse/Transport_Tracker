@@ -57,7 +57,7 @@ class TrackerService : Service() {
                 setDescription(description)}
             notificationManager.createNotificationChannel(channel)
             val builder =NotificationCompat.Builder(this,channelId)
-                .setSmallIcon(R.drawable.ic_tracker)2019
+                .setSmallIcon(R.drawable.ic_tracker)
                 .setCustomContentView(collapsedview)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             with(NotificationManagerCompat.from(this)){

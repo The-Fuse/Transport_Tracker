@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -20,7 +21,11 @@ class MainActivity : Activity() {
         val lm =
             getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.ic_location_off_black_24dp)
+
             Toast.makeText(this, "Please enable location services", Toast.LENGTH_SHORT).show()
+        }else{
+            findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.ic_location_on_black_24dp)
         }
 
         // Check location permission is granted - if it is, start

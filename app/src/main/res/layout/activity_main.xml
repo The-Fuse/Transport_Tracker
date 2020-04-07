@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:background="#D8FF325B"
         android:padding="10dp"
-        android:shadowRadius="5dp"
         android:text="@string/stop_location_tracing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
