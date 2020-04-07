@@ -8,7 +8,17 @@
     android:background="#673AB7">
 
 
-
-
-
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_location_tracing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#D8FF325B"
+        android:padding="10dp"
+        android:shadowRadius="5dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

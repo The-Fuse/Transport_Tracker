@@ -6,5 +6,6 @@
 <string name="firebase_email" translatable="false">rohitkumaryadav141002@gmail.com</string>
 <string name="firebase_password" translatable="false">rohit@100</string>
    <string name="tracker_app">Tracker App</string>
+    <string name="stop_location_tracing">Stop LOcation Tracing</string>
 </resources>
 
