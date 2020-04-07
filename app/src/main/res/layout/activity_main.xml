@@ -12,13 +12,15 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#D8FF325B"
+        android:padding="10dp"
+        android:shadowRadius="5dp"
         android:text="@string/stop_location_tracing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#D8FF325B"
-        android:padding="10dp"
-        android:shadowRadius="5dp" />
+        app:layout_constraintVertical_bias="0.901" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

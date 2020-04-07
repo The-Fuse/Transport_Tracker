@@ -7,5 +7,6 @@
 <string name="firebase_password" translatable="false">rohit@100</string>
    <string name="tracker_app">Tracker App</string>
     <string name="stop_location_tracing">Stop LOcation Tracing</string>
+    <string name="tracking_your_location_tap_to_cancel">Tracking your location Tap to cancel</string>
 </resources>
 
