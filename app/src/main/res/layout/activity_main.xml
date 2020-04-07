@@ -27,6 +27,7 @@
         android:id="@+id/imageView"
         android:layout_width="196dp"
         android:layout_height="174dp"
+        android:contentDescription="@string/location_is_on"
         android:src="@drawable/ic_location_on_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"

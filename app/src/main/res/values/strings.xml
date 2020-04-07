@@ -8,5 +8,6 @@
    <string name="tracker_app">Tracker App</string>
     <string name="stop_location_tracing">Stop LOcation Tracing</string>
     <string name="tracking_your_location_tap_to_cancel">Tracking your location Tap to cancel</string>
+    <string name="location_is_on">Location is on</string>
 </resources>
 
