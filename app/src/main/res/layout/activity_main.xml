@@ -19,6 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="#D8FF325B"
         android:padding="10dp"
-        android:shadowRadius="5dp"
-        />
+        android:shadowRadius="5dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
