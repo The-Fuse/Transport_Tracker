@@ -37,7 +37,6 @@ class TrackerService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        loginToFirebase()
         buildnotification()
         requestLocationUpdates()
     }
@@ -68,22 +67,6 @@ class TrackerService : Service() {
         }
 
 
-    }
-
-    private fun loginToFirebase() {
-        // Authenticate with Firebase, and request location updates
-        val email = getString(R.string.firebase_email)
-        val password = getString(R.string.firebase_password)
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(
-            email, password
-        ).addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                Log.d(TAG, "firebase auth success")
-                requestLocationUpdates()
-            } else {
-                Log.d(TAG, "firebase auth failed")
-            }
-        }
     }
 
 
