@@ -1,8 +1,10 @@
 package com.example.transporttracker
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_signin.*
@@ -33,12 +35,13 @@ class signin : AppCompatActivity() {
                         Toast.makeText(this,"Please try again",Toast.LENGTH_SHORT).show()
                         return@addOnCompleteListener
                     }else{
-                        Toast.makeText(this,"Account created successfully!!",Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this,Home::class.java)
-                        intent.flags=
-                            Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
+                        Log.d("Main","Account created succesfully!!")
                     }
+                    Toast.makeText(this,"Account created successfully!!",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,Home::class.java)
+                    intent.flags=
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
                 }
         }else{
             Toast.makeText(this,"Password don't matches",Toast.LENGTH_SHORT).show()
