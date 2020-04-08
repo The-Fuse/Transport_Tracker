@@ -1,5 +1,6 @@
 package com.example.transporttracker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,9 @@ class Home : AppCompatActivity() {
             ).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Login Succesfully", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
                 }
