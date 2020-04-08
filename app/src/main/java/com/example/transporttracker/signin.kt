@@ -40,6 +40,8 @@ class signin : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
+        }else{
+            Toast.makeText(this,"Password don't matches",Toast.LENGTH_SHORT).show()
         }
     }
 }
