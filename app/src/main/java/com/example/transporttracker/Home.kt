@@ -14,6 +14,10 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home2)
+        registration.setOnClickListener {
+            val intent = Intent(this,signin::class.java)
+            startActivity(intent)
+        }
         login.setOnClickListener {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(
                 email.text.toString(),password.text.toString()
