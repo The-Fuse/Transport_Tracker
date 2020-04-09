@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_signin.*
@@ -20,15 +21,22 @@ class signin : AppCompatActivity() {
         }
     }
     private fun performregister(){
+        val etemail: EditText = findViewById(R.id.email)
+        val etpassword:EditText= findViewById(R.id.password)
+        val etcnfpassword:EditText = findViewById(R.id.confpassword)
         val email=email.text.toString()
         val password= password.text.toString()
         val confirmpassword=confpassword.text.toString()
 
-        if(password===confirmpassword){
-            if (email.isEmpty() || password.isEmpty()){
-                Toast.makeText(this,"PLease fill up the credentials!",Toast.LENGTH_SHORT).show()
-                return
-            }
+        if (email.isEmpty()){
+            etemail.error= "Required"
+        }else if(password.isEmpty()){
+            etpassword.error="Required"
+        }else if(confirmpassword.isEmpty()){
+            etcnfpassword.error="Required"
+        }else if(password!=confirmpassword){
+            etcnfpassword.error="Password not match!"
+        }else(){
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener {
                     if(!it.isSuccessful){
@@ -43,8 +51,6 @@ class signin : AppCompatActivity() {
                         Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                 }
-        }else{
-            Toast.makeText(this,"Password don't matches",Toast.LENGTH_SHORT).show()
         }
     }
 }
