@@ -10,5 +10,6 @@
     <string name="tracking_your_location_tap_to_cancel">Tracking your location Tap to cancel</string>
     <string name="location_is_on">Location is on</string>
     <string name="don_t_have_an_account_create_one">Don\'t have an account . Create one!!</string>
+    <string name="login">Login</string>
 </resources>
 
