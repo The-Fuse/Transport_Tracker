@@ -13,6 +13,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Enter email"
+        android:background="@drawable/input_field"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
