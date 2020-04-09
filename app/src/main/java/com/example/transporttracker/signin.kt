@@ -36,7 +36,7 @@ class signin : AppCompatActivity() {
             etcnfpassword.error="Required"
         }else if(password!=confirmpassword){
             etcnfpassword.error="Password not match!"
-        }else(){
+        }else{
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener {
                     if(!it.isSuccessful){
