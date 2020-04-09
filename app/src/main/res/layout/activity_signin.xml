@@ -10,6 +10,7 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Enter email"
         android:inputType="textEmailAddress"
